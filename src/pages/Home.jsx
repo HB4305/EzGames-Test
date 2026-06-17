@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import GenreGrid from '../components/GenreGrid';
 import BookCard from '../components/BookCard';
@@ -19,8 +20,8 @@ const Home = () => {
                       Picks</span>
                   <h2 className="font-headline-xl text-headline-xl text-on-background">Featured this month</h2>
               </div>
-              <a className="font-label-caps text-label-caps text-tertiary hover:text-primary transition-colors flex items-center gap-1"
-                  href="#">View all <span className={`material-symbols-outlined text-sm ${styles.icon}`}>arrow_forward</span></a>
+              <Link className="font-label-caps text-label-caps text-tertiary hover:text-primary transition-colors flex items-center gap-1"
+                  to="/books">View all <span className={`material-symbols-outlined text-sm ${styles.icon}`}>arrow_forward</span></Link>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-gutter">

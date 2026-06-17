@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './BookCard.module.css';
 
-const BookCard = ({ title, author, price, oldPrice, rating, bgColorHex, tag, tagType }) => {
+const BookCard = ({ id = 1, title, author, price, oldPrice, rating, bgColorHex, tag, tagType }) => {
     return (
-        <div className={`group flex flex-col ${styles.bookCard}`}>
+        <Link to={`/book/${id}`} className={`group flex flex-col ${styles.bookCard}`}>
             <div
                 className="relative bg-surface border border-outline-variant rounded-lg p-3 mb-4 aspect-[2/3] flex flex-col justify-between overflow-hidden shadow-sm">
                 <div aria-hidden="true" className="absolute inset-0 m-3 rounded shadow-inner" style={{ backgroundColor: bgColorHex }}></div>
@@ -38,7 +39,7 @@ const BookCard = ({ title, author, price, oldPrice, rating, bgColorHex, tag, tag
                     <span className="text-on-surface-variant">{rating}</span>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './GenreGrid.module.css';
 
 const GenreGrid = () => {
@@ -11,36 +12,36 @@ const GenreGrid = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-gutter">
                 {/* Genre Card */}
-                <a className="block bg-[#9C5D4E] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
-                    href="#">
+                <Link className="block bg-[#9C5D4E] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
+                    to="/books?category=Fiction">
                     <h3 className="font-title-md text-title-md text-on-primary mb-1">Fiction</h3>
                     <p className="font-label-caps text-label-caps text-on-primary/80">3 titles</p>
-                </a>
-                <a className="block bg-[#6A7DA3] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
-                    href="#">
+                </Link>
+                <Link className="block bg-[#6A7DA3] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
+                    to="/books?category=Mystery">
                     <h3 className="font-title-md text-title-md text-on-primary mb-1">Mystery</h3>
                     <p className="font-label-caps text-label-caps text-on-primary/80">2 titles</p>
-                </a>
-                <a className="block bg-[#5E8A8F] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
-                    href="#">
+                </Link>
+                <Link className="block bg-[#5E8A8F] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
+                    to="/books?category=Sci-Fi">
                     <h3 className="font-title-md text-title-md text-on-primary mb-1">Sci-Fi</h3>
                     <p className="font-label-caps text-label-caps text-on-primary/80">2 titles</p>
-                </a>
-                <a className="block bg-[#9E5675] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
-                    href="#">
+                </Link>
+                <Link className="block bg-[#9E5675] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
+                    to="/books?category=Poetry">
                     <h3 className="font-title-md text-title-md text-on-primary mb-1">Poetry</h3>
                     <p className="font-label-caps text-label-caps text-on-primary/80">2 titles</p>
-                </a>
-                <a className="block bg-[#BC8F4F] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
-                    href="#">
+                </Link>
+                <Link className="block bg-[#BC8F4F] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
+                    to="/books?category=Children">
                     <h3 className="font-title-md text-title-md text-on-primary mb-1">Children</h3>
                     <p className="font-label-caps text-label-caps text-on-primary/80">2 titles</p>
-                </a>
-                <a className="block bg-[#7D6B95] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
-                    href="#">
+                </Link>
+                <Link className="block bg-[#7D6B95] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
+                    to="/books?category=Non-fiction">
                     <h3 className="font-title-md text-title-md text-on-primary mb-1">Non-fiction</h3>
                     <p className="font-label-caps text-label-caps text-on-primary/80">2 titles</p>
-                </a>
+                </Link>
             </div>
         </section>
     );

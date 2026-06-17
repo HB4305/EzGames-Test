@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../contexts/CartContext';
 import styles from './Bag.module.css';
 
 const Bag = () => {
-    const [quantity, setQuantity] = useState(2);
-    const unitPrice = 18;
-    const isCartEmpty = quantity === 0;
-
-    const increase = () => setQuantity(q => q + 1);
-    const decrease = () => setQuantity(q => (q > 0 ? q - 1 : 0));
-    const remove = () => setQuantity(0);
-
-    const subtotal = quantity * unitPrice;
+    const { cartItems, updateQuantity, removeFromCart, cartTotalPrice, cartTotalQuantity } = useCart();
+    const isCartEmpty = cartItems.length === 0;
 
     return (
         <main className={`flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap pt-[120px] ${styles.bagPage || ''}`}>
@@ -39,36 +33,36 @@ const Bag = () => {
                             <Link to="/" className="text-primary hover:underline font-title-md">Continue Shopping</Link>
                         </div>
                     ) : (
-                        <div className="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 md:p-6 flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-                            {/* Book Cover Placeholder */}
-                            <div className="w-24 h-32 md:w-32 md:h-40 flex-shrink-0 rounded-md bg-surface-tint shadow-sm overflow-hidden relative">
-                                {/* Abstract placeholder color */}
-                                <div className="absolute inset-0 bg-primary-container opacity-80 mix-blend-multiply"></div>
-                            </div>
-                            {/* Item Details */}
-                            <div className="flex-grow flex flex-col gap-1">
-                                <h2 className="font-title-md text-title-md text-on-background">The Lighthouse Keeper</h2>
-                                <p className="font-body-md text-body-md text-on-surface-variant mb-2">Mara Ellison</p>
-                                <button
-                                    onClick={remove}
-                                    className="text-tertiary-container hover:text-tertiary font-body-md text-sm text-left transition-colors w-fit">Remove</button>
-                            </div>
-                            {/* Quantity & Price Controls */}
-                            <div className="flex flex-row sm:flex-col items-center justify-between w-full sm:w-auto sm:items-end gap-4 mt-4 sm:mt-0">
-                                <div className="flex items-center border border-outline-variant rounded-full bg-surface-container-lowest h-10 px-2">
-                                    <button aria-label="Decrease quantity" onClick={decrease}
-                                        className="w-8 h-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
-                                        <span className="material-symbols-outlined text-sm">remove</span>
-                                    </button>
-                                    <span className="w-8 text-center font-body-md text-body-md text-on-background font-medium">{quantity}</span>
-                                    <button aria-label="Increase quantity" onClick={increase}
-                                        className="w-8 h-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
-                                        <span className="material-symbols-outlined text-sm">add</span>
-                                    </button>
+                        cartItems.map(item => (
+                            <div key={item.id} className="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 md:p-6 flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                                {/* Book Cover Placeholder */}
+                                <div className={`w-24 h-32 md:w-32 md:h-40 flex-shrink-0 rounded-md bg-gradient-to-br ${item.coverStyle || 'from-[#4a7a6c] to-[#2f5548]'} shadow-sm overflow-hidden relative`}>
                                 </div>
-                                <span className="font-title-md text-title-md text-tertiary-container font-bold">${subtotal.toFixed(2)}</span>
+                                {/* Item Details */}
+                                <div className="flex-grow flex flex-col gap-1">
+                                    <h2 className="font-title-md text-title-md text-on-background">{item.title}</h2>
+                                    <p className="font-body-md text-body-md text-on-surface-variant mb-2">{item.author}</p>
+                                    <button
+                                        onClick={() => removeFromCart(item.id)}
+                                        className="text-tertiary-container hover:text-tertiary font-body-md text-sm text-left transition-colors w-fit">Remove</button>
+                                </div>
+                                {/* Quantity & Price Controls */}
+                                <div className="flex flex-row sm:flex-col items-center justify-between w-full sm:w-auto sm:items-end gap-4 mt-4 sm:mt-0">
+                                    <div className="flex items-center border border-outline-variant rounded-full bg-surface-container-lowest h-10 px-2">
+                                        <button aria-label="Decrease quantity" onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                                            className="w-8 h-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+                                            <span className="material-symbols-outlined text-sm">remove</span>
+                                        </button>
+                                        <span className="w-8 text-center font-body-md text-body-md text-on-background font-medium">{item.quantity}</span>
+                                        <button aria-label="Increase quantity" onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                                            className="w-8 h-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+                                            <span className="material-symbols-outlined text-sm">add</span>
+                                        </button>
+                                    </div>
+                                    <span className="font-title-md text-title-md text-tertiary-container font-bold">${(item.price * item.quantity).toFixed(2)}</span>
+                                </div>
                             </div>
-                        </div>
+                        ))
                     )}
                 </section>
                 
@@ -78,8 +72,8 @@ const Bag = () => {
                         <h2 className="font-title-md text-title-md text-on-background mb-6 font-bold">Order summary</h2>
                         <div className="flex flex-col gap-4 mb-6 border-b border-outline-variant pb-6">
                             <div className="flex justify-between items-center font-body-md text-body-md text-on-surface-variant">
-                                <span>Subtotal ({quantity} items)</span>
-                                <span className="text-on-background">${subtotal.toFixed(2)}</span>
+                                <span>Subtotal ({cartTotalQuantity} items)</span>
+                                <span className="text-on-background">${cartTotalPrice.toFixed(2)}</span>
                             </div>
                             <div className="flex justify-between items-center font-body-md text-body-md text-on-surface-variant">
                                 <span>Shipping</span>
@@ -88,7 +82,7 @@ const Bag = () => {
                         </div>
                         <div className="flex justify-between items-center font-title-md text-title-md text-on-background mb-8 font-bold">
                             <span>Total</span>
-                            <span className="text-tertiary-container">${subtotal.toFixed(2)}</span>
+                            <span className="text-tertiary-container">${cartTotalPrice.toFixed(2)}</span>
                         </div>
                         <button
                             disabled={isCartEmpty}
