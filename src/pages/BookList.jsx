@@ -23,6 +23,7 @@ const BookList = () => {
     const navigate = useNavigate();
     const queryParams = new URLSearchParams(location.search);
     const categoryFromQuery = queryParams.get('category') || 'All';
+    const collectionFromQuery = queryParams.get('collection');
 
     const [selectedCategory, setSelectedCategory] = useState(categoryFromQuery);
     const [sortOption, setSortOption] = useState('Featured');
@@ -42,6 +43,16 @@ const BookList = () => {
 
     const displayedBooks = useMemo(() => {
         let filtered = [...booksData];
+        
+        if (collectionFromQuery === 'bestseller') {
+            filtered = filtered.filter(book => book.tagType === 'bestseller');
+        } else if (collectionFromQuery === 'new') {
+            filtered = filtered.filter(book => book.tagType === 'new');
+        } else if (collectionFromQuery === 'featured') {
+            // Mock featured books by taking a subset, or leave as is
+            filtered = filtered.slice(0, 5);
+        }
+
         if (selectedCategory !== 'All') {
             filtered = filtered.filter(book => book.category === selectedCategory);
         }
@@ -55,7 +66,7 @@ const BookList = () => {
         }
         
         return filtered;
-    }, [selectedCategory, sortOption]);
+    }, [selectedCategory, sortOption, collectionFromQuery]);
 
     return (
         <main className={`max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap pt-[120px] ${styles.bookList || ''}`}>

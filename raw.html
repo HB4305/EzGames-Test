@@ -1,20 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en" style="">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Pages &amp; Co. - Independent Bookshop</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..1000;1,9..40,400..1000&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -153,7 +154,7 @@
                         class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
                     <input
                         class="pl-9 pr-4 py-1.5 rounded-full border border-outline-variant bg-surface-container-low text-sm focus:outline-none focus:border-primary w-48 transition-colors"
-                        placeholder="Search titles, authors..." type="text">
+                        placeholder="Search titles, authors..." type="text" />
                 </div>
                 <button
                     class="hidden md:block px-4 py-1.5 rounded-full border border-outline-variant text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-all text-sm font-title-md">Sign
@@ -176,8 +177,8 @@
                     <span
                         class="font-label-caps text-label-caps text-surface-variant tracking-wider uppercase mb-4 block">Staff
                         Favourites</span>
-                    <h1 class="font-display-lg text-display-lg text-on-primary mb-6">The shelves<br>we keep<br>coming
-                        back to</h1>
+                    <h1 class="font-display-lg text-display-lg text-on-primary mb-6">The shelves<br />we
+                        keep<br />coming back to</h1>
                     <p class="font-body-lg text-body-lg text-surface-container-high mb-8 max-w-md">Our booksellers pick
                         the titles they can't stop pressing into customers' hands.</p>
                     <button
@@ -343,6 +344,315 @@
                 </div>
             </div>
         </section>
+        <!-- Promotional Banner -->
+        <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+            <div
+                class="bg-primary-container rounded-xl p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+                <div class="max-w-2xl">
+                    <span
+                        class="font-label-caps text-label-caps text-on-primary-container tracking-wider uppercase mb-3 block">The
+                        Reading Room</span>
+                    <h2 class="font-headline-xl text-headline-xl text-on-primary mb-4">Free shipping on every order over
+                        $35</h2>
+                    <p class="font-body-lg text-body-lg text-on-primary-container">Plus 15% off your first month and a
+                        weekly recommendation picked just for you.</p>
+                </div>
+                <button
+                    class="bg-secondary-container text-on-secondary-container px-8 py-3 rounded-full font-title-md hover:bg-secondary transition-colors whitespace-nowrap">Join
+                    free</button>
+            </div>
+        </section>
+        <!-- Bestsellers Section -->
+        <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+            <div class="flex justify-between items-end mb-8 border-b border-outline-variant pb-4">
+                <div>
+                    <span class="font-label-caps text-label-caps text-tertiary tracking-wider uppercase mb-2 block">Most
+                        Loved</span>
+                    <h2 class="font-headline-xl text-headline-xl text-on-background">Bestsellers</h2>
+                </div>
+                <a class="font-label-caps text-label-caps text-tertiary hover:text-primary transition-colors flex items-center gap-1"
+                    href="#">View all <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-gutter">
+                <!-- Book Card 1 -->
+                <div class="group flex flex-col">
+                    <div
+                        class="relative bg-surface border border-outline-variant rounded-lg p-3 mb-4 aspect-[2/3] flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div aria-hidden="true" class="absolute inset-0 bg-[#4A725D] m-3 rounded shadow-inner"></div>
+                        <span
+                            class="relative z-10 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-1 rounded-sm self-start">BESTSELLER</span>
+                        <div class="relative z-10 self-start text-on-primary mt-auto">
+                            <p class="font-title-md text-sm leading-tight mb-1">The Lighthouse Keeper</p>
+                            <p class="text-xs opacity-80">Mara Ellison</p>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="font-title-md text-title-md text-on-background line-clamp-1 group-hover:text-primary transition-colors">
+                            The Lighthouse Keeper</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant mb-2">Mara Ellison</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-title-md text-tertiary-container">$18.00</span>
+                            <span class="text-xs text-outline line-through">$24.00</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-secondary-container">
+                            <span class="material-symbols-outlined text-[14px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-on-surface-variant">4.6</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book Card 2 -->
+                <div class="group flex flex-col">
+                    <div
+                        class="relative bg-surface border border-outline-variant rounded-lg p-3 mb-4 aspect-[2/3] flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div aria-hidden="true" class="absolute inset-0 bg-[#586A8D] m-3 rounded shadow-inner"></div>
+                        <span
+                            class="relative z-10 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-1 rounded-sm self-start">BESTSELLER</span>
+                        <div class="relative z-10 self-start text-on-primary mt-auto">
+                            <p class="font-title-md text-sm leading-tight mb-1">Ashes in the Archive</p>
+                            <p class="text-xs opacity-80">J. P. Crowe</p>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="font-title-md text-title-md text-on-background line-clamp-1 group-hover:text-primary transition-colors">
+                            Ashes in the Archive</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant mb-2">J. P. Crowe</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-title-md text-tertiary-container">$15.50</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-secondary-container">
+                            <span class="material-symbols-outlined text-[14px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-on-surface-variant">4.4</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book Card 3 -->
+                <div class="group flex flex-col">
+                    <div
+                        class="relative bg-surface border border-outline-variant rounded-lg p-3 mb-4 aspect-[2/3] flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div aria-hidden="true" class="absolute inset-0 bg-[#BC8F4F] m-3 rounded shadow-inner"></div>
+                        <span
+                            class="relative z-10 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-1 rounded-sm self-start">BESTSELLER</span>
+                        <div class="relative z-10 self-start text-on-primary mt-auto">
+                            <p class="font-title-md text-sm leading-tight mb-1">Pip and the Paper Moon</p>
+                            <p class="text-xs opacity-80">Lena Hart</p>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="font-title-md text-title-md text-on-background line-clamp-1 group-hover:text-primary transition-colors">
+                            Pip and the Paper Moon</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant mb-2">Lena Hart</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-title-md text-tertiary-container">$11.50</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-secondary-container">
+                            <span class="material-symbols-outlined text-[14px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-on-surface-variant">4.9</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book Card 4 -->
+                <div class="group flex flex-col">
+                    <div
+                        class="relative bg-surface border border-outline-variant rounded-lg p-3 mb-4 aspect-[2/3] flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div aria-hidden="true" class="absolute inset-0 bg-[#7B553D] m-3 rounded shadow-inner"></div>
+                        <span
+                            class="relative z-10 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-1 rounded-sm self-start">BESTSELLER</span>
+                        <div class="relative z-10 self-start text-on-primary mt-auto">
+                            <p class="font-title-md text-sm leading-tight mb-1">Everything the River Took</p>
+                            <p class="text-xs opacity-80">Ada Fenwick</p>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="font-title-md text-title-md text-on-background line-clamp-1 group-hover:text-primary transition-colors">
+                            Everything the River Took</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant mb-2">Ada Fenwick</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-title-md text-tertiary-container">$18.75</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-secondary-container">
+                            <span class="material-symbols-outlined text-[14px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-on-surface-variant">4.6</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book Card 5 -->
+                <div class="group flex flex-col">
+                    <div
+                        class="relative bg-surface border border-outline-variant rounded-lg p-3 mb-4 aspect-[2/3] flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div aria-hidden="true" class="absolute inset-0 bg-[#67557A] m-3 rounded shadow-inner"></div>
+                        <span
+                            class="relative z-10 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-1 rounded-sm self-start">BESTSELLER</span>
+                        <div class="relative z-10 self-start text-on-primary mt-auto">
+                            <p class="font-title-md text-sm leading-tight mb-1">A House of Borrowed Light</p>
+                            <p class="text-xs opacity-80">Sofia Marchetti</p>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="font-title-md text-title-md text-on-background line-clamp-1 group-hover:text-primary transition-colors">
+                            A House of Borrowed Light</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant mb-2">Sofia Marchetti</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-title-md text-tertiary-container">$17.25</span>
+                            <span class="text-xs text-outline line-through">$22.00</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-secondary-container">
+                            <span class="material-symbols-outlined text-[14px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-on-surface-variant">4.5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- New Arrivals Section -->
+        <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+            <div class="flex justify-between items-end mb-8 border-b border-outline-variant pb-4">
+                <div>
+                    <span class="font-label-caps text-label-caps text-tertiary tracking-wider uppercase mb-2 block">Hot
+                        Off The Press</span>
+                    <h2 class="font-headline-xl text-headline-xl text-on-background">New arrivals</h2>
+                </div>
+                <a class="font-label-caps text-label-caps text-tertiary hover:text-primary transition-colors flex items-center gap-1"
+                    href="#">View all <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-gutter">
+                <!-- Book Card 1 -->
+                <div class="group flex flex-col">
+                    <div
+                        class="relative bg-surface border border-outline-variant rounded-lg p-3 mb-4 aspect-[2/3] flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div aria-hidden="true" class="absolute inset-0 bg-[#8E4A68] m-3 rounded shadow-inner"></div>
+                        <span
+                            class="relative z-10 bg-surface text-on-surface font-label-caps text-[10px] px-2 py-1 rounded-sm self-end">NEW</span>
+                        <div class="relative z-10 self-start text-on-primary mt-auto">
+                            <p class="font-title-md text-sm leading-tight mb-1">Salt &amp; Other Small Gods</p>
+                            <p class="text-xs opacity-80">Imani Okafor</p>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="font-title-md text-title-md text-on-background line-clamp-1 group-hover:text-primary transition-colors">
+                            Salt &amp; Other Small Gods</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant mb-2">Imani Okafor</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-title-md text-tertiary-container">$13.00</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-secondary-container">
+                            <span class="material-symbols-outlined text-[14px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-on-surface-variant">4.8</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book Card 2 -->
+                <div class="group flex flex-col">
+                    <div
+                        class="relative bg-surface border border-outline-variant rounded-lg p-3 mb-4 aspect-[2/3] flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div aria-hidden="true" class="absolute inset-0 bg-[#586A8D] m-3 rounded shadow-inner"></div>
+                        <span
+                            class="relative z-10 bg-surface text-on-surface font-label-caps text-[10px] px-2 py-1 rounded-sm self-end">NEW</span>
+                        <div class="relative z-10 self-start text-on-primary mt-auto">
+                            <p class="font-title-md text-sm leading-tight mb-1">Threads of the Void</p>
+                            <p class="text-xs opacity-80">Kai Tanaka</p>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="font-title-md text-title-md text-on-background line-clamp-1 group-hover:text-primary transition-colors">
+                            Threads of the Void</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant mb-2">Kai Tanaka</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-title-md text-tertiary-container">$20.50</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-secondary-container">
+                            <span class="material-symbols-outlined text-[14px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-on-surface-variant">4.6</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book Card 3 -->
+                <div class="group flex flex-col">
+                    <div
+                        class="relative bg-surface border border-outline-variant rounded-lg p-3 mb-4 aspect-[2/3] flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div aria-hidden="true" class="absolute inset-0 bg-[#BC8F4F] m-3 rounded shadow-inner"></div>
+                        <span
+                            class="relative z-10 bg-surface text-on-surface font-label-caps text-[10px] px-2 py-1 rounded-sm self-end">NEW</span>
+                        <div class="relative z-10 self-start text-on-primary mt-auto">
+                            <p class="font-title-md text-sm leading-tight mb-1">The Button Thief</p>
+                            <p class="text-xs opacity-80">Marco Diaz</p>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="font-title-md text-title-md text-on-background line-clamp-1 group-hover:text-primary transition-colors">
+                            The Button Thief</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant mb-2">Marco Diaz</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-title-md text-tertiary-container">$10.99</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-secondary-container">
+                            <span class="material-symbols-outlined text-[14px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-on-surface-variant">4.7</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book Card 4 -->
+                <div class="group flex flex-col">
+                    <div
+                        class="relative bg-surface border border-outline-variant rounded-lg p-3 mb-4 aspect-[2/3] flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div aria-hidden="true" class="absolute inset-0 bg-[#7B553D] m-3 rounded shadow-inner"></div>
+                        <span
+                            class="relative z-10 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-1 rounded-sm self-start">BESTSELLER</span>
+                        <div class="relative z-10 self-start text-on-primary mt-auto">
+                            <p class="font-title-md text-sm leading-tight mb-1">Everything the River Took</p>
+                            <p class="text-xs opacity-80">Ada Fenwick</p>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="font-title-md text-title-md text-on-background line-clamp-1 group-hover:text-primary transition-colors">
+                            Everything the River Took</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant mb-2">Ada Fenwick</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-title-md text-tertiary-container">$18.75</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-secondary-container">
+                            <span class="material-symbols-outlined text-[14px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-on-surface-variant">4.6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <!-- Footer -->
     <footer
@@ -399,7 +709,7 @@
                 <form class="flex gap-2">
                     <input
                         class="bg-transparent border border-outline-variant rounded px-3 py-2 text-sm w-full focus:outline-none focus:border-secondary-container"
-                        placeholder="Email address" type="email">
+                        placeholder="Email address" type="email" />
                     <button
                         class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded font-title-md text-sm hover:bg-secondary-fixed transition-colors"
                         type="submit">Join</button>
@@ -412,8 +722,6 @@
             <p class="mt-4 md:mt-0">Free shipping on orders over $35</p>
         </div>
     </footer>
-
-
 </body>
 
 </html>
