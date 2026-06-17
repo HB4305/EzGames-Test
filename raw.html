@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Pages &amp; Co. - Independent Bookshop</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..1000;1,9..40,400..1000&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#291800",
+                        "surface-bright": "#fdf9ed",
+                        "tertiary-container": "#6f3322",
+                        "secondary-fixed": "#ffddb2",
+                        "tertiary": "#531e0e",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#486457",
+                        "surface-container-high": "#ebe8dc",
+                        "primary": "#173328",
+                        "tertiary-fixed-dim": "#ffb5a0",
+                        "tertiary-fixed": "#ffdbd1",
+                        "secondary": "#7e5716",
+                        "outline-variant": "#c1c8c3",
+                        "primary-fixed": "#caead9",
+                        "on-primary-fixed": "#032016",
+                        "surface": "#fdf9ed",
+                        "secondary-fixed-dim": "#f1be73",
+                        "outline": "#727974",
+                        "surface-variant": "#e5e3d7",
+                        "on-tertiary-fixed": "#390b01",
+                        "inverse-primary": "#aecebe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#424844",
+                        "inverse-surface": "#313129",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1c1c15",
+                        "on-tertiary-fixed-variant": "#723524",
+                        "on-primary-container": "#9ab9a9",
+                        "surface-dim": "#dddace",
+                        "on-secondary-fixed-variant": "#624000",
+                        "inverse-on-surface": "#f4f1e5",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#f19d85",
+                        "surface-container-highest": "#e5e3d7",
+                        "on-primary-fixed-variant": "#304c40",
+                        "primary-fixed-dim": "#aecebe",
+                        "surface-container-low": "#f7f4e8",
+                        "surface-container": "#f1eee2",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#2e4a3e",
+                        "on-surface": "#1c1c15",
+                        "background": "#fdf9ed",
+                        "on-secondary-container": "#785211",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#fec97d",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "section-gap": "80px",
+                        "base": "8px",
+                        "stack-sm": "4px",
+                        "stack-md": "12px",
+                        "container-max": "1280px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["DM Sans"],
+                        "body-lg": ["Work Sans"],
+                        "headline-xl": ["DM Sans"],
+                        "label-caps": ["Work Sans"],
+                        "title-md": ["DM Sans"],
+                        "display-lg": ["DM Sans"],
+                        "body-md": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "title-md": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: theme('colors.background');
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-on-background antialiased bg-surface">
+    <!-- TopNavBar -->
+    <nav
+        class="bg-surface dark:bg-surface text-primary dark:text-primary-fixed font-title-md text-title-md fixed top-0 w-full z-50 border-b border-outline-variant flat no shadows">
+        <div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto px-2 md:px-8">
+            <!-- Brand -->
+            <a class="flex items-center gap-2 font-headline-xl text-headline-xl font-bold text-primary dark:text-primary-fixed scale-95 active:scale-90 transition-transform duration-200 whitespace-nowrap"
+                href="#">
+                <div
+                    class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary font-title-md text-sm">
+                    P</div>
+                Pages &amp; Co.
+            </a>
+            <!-- Nav Links (Desktop) -->
+            <div class="hidden md:flex items-center gap-6 flex-nowrap">
+                <a class="text-primary font-bold border-b-2 border-primary pb-1 whitespace-nowrap" href="#">Home</a>
+                <a class="text-on-surface-variant hover:text-primary px-2 transition-colors whitespace-nowrap"
+                    href="#">Shop All</a>
+                <a class="text-on-surface-variant hover:text-primary px-2 transition-colors whitespace-nowrap"
+                    href="#">Fiction</a>
+                <a class="text-on-surface-variant hover:text-primary px-2 transition-colors whitespace-nowrap"
+                    href="#">Mystery</a>
+                <a class="text-on-surface-variant hover:text-primary px-2 transition-colors whitespace-nowrap"
+                    href="#">Children</a>
+                <a class="text-on-surface-variant hover:text-primary px-2 transition-colors whitespace-nowrap"
+                    href="#">Poetry</a>
+            </div>
+            <!-- Actions -->
+            <div class="flex items-center gap-4 flex-nowrap">
+                <div class="relative hidden md:block">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+                    <input
+                        class="pl-9 pr-4 py-1.5 rounded-full border border-outline-variant bg-surface-container-low text-sm focus:outline-none focus:border-primary w-48 transition-colors"
+                        placeholder="Search titles, authors..." type="text">
+                </div>
+                <button
+                    class="hidden md:block px-4 py-1.5 rounded-full border border-outline-variant text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-all text-sm font-title-md">Sign
+                    in</button>
+                <button
+                    class="flex items-center gap-2 bg-on-background text-on-primary px-4 py-1.5 rounded-full hover:bg-primary transition-colors text-sm font-title-md">
+                    Bag
+                    <span
+                        class="bg-secondary-container text-on-secondary-container text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-[80px]"> <!-- Offset for fixed nav -->
+        <!-- Hero Carousel -->
+        <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-8 mb-section-gap">
+            <div
+                class="bg-primary-container rounded-xl overflow-hidden relative min-h-[400px] md:min-h-[500px] flex items-center">
+                <div class="px-8 md:px-16 py-12 md:py-20 w-full md:w-2/3 z-10">
+                    <span
+                        class="font-label-caps text-label-caps text-surface-variant tracking-wider uppercase mb-4 block">Staff
+                        Favourites</span>
+                    <h1 class="font-display-lg text-display-lg text-on-primary mb-6">The shelves<br>we keep<br>coming
+                        back to</h1>
+                    <p class="font-body-lg text-body-lg text-surface-container-high mb-8 max-w-md">Our booksellers pick
+                        the titles they can't stop pressing into customers' hands.</p>
+                    <button
+                        class="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-md font-title-md hover:bg-secondary transition-colors">Browse
+                        bestsellers</button>
+                </div>
+                <!-- Carousel Controls -->
+                <button
+                    class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface/20 flex items-center justify-center text-on-primary hover:bg-surface/40 backdrop-blur-sm transition-all z-20">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button
+                    class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface/20 flex items-center justify-center text-on-primary hover:bg-surface/40 backdrop-blur-sm transition-all z-20">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+                <!-- Pagination -->
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                    <div class="w-2 h-2 rounded-full bg-surface/50"></div>
+                    <div class="w-6 h-2 rounded-full bg-secondary-container"></div>
+                    <div class="w-2 h-2 rounded-full bg-surface/50"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Browse by Genre -->
+        <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+            <div class="mb-8">
+                <span class="font-label-caps text-label-caps text-tertiary tracking-wider uppercase mb-2 block">Find
+                    your shelf</span>
+                <h2 class="font-headline-xl text-headline-xl text-on-background">Browse by genre</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-gutter">
+                <!-- Genre Card -->
+                <a class="block bg-[#9C5D4E] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
+                    href="#">
+                    <h3 class="font-title-md text-title-md text-on-primary mb-1">Fiction</h3>
+                    <p class="font-label-caps text-label-caps text-on-primary/80">3 titles</p>
+                </a>
+                <a class="block bg-[#6A7DA3] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
+                    href="#">
+                    <h3 class="font-title-md text-title-md text-on-primary mb-1">Mystery</h3>
+                    <p class="font-label-caps text-label-caps text-on-primary/80">2 titles</p>
+                </a>
+                <a class="block bg-[#5E8A8F] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
+                    href="#">
+                    <h3 class="font-title-md text-title-md text-on-primary mb-1">Sci-Fi</h3>
+                    <p class="font-label-caps text-label-caps text-on-primary/80">2 titles</p>
+                </a>
+                <a class="block bg-[#9E5675] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
+                    href="#">
+                    <h3 class="font-title-md text-title-md text-on-primary mb-1">Poetry</h3>
+                    <p class="font-label-caps text-label-caps text-on-primary/80">2 titles</p>
+                </a>
+                <a class="block bg-[#BC8F4F] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
+                    href="#">
+                    <h3 class="font-title-md text-title-md text-on-primary mb-1">Children</h3>
+                    <p class="font-label-caps text-label-caps text-on-primary/80">2 titles</p>
+                </a>
+                <a class="block bg-[#7D6B95] rounded-xl p-6 aspect-[4/3] flex flex-col justify-end hover:opacity-90 transition-opacity"
+                    href="#">
+                    <h3 class="font-title-md text-title-md text-on-primary mb-1">Non-fiction</h3>
+                    <p class="font-label-caps text-label-caps text-on-primary/80">2 titles</p>
+                </a>
+            </div>
+        </section>
+        <!-- Featured Section -->
+        <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+            <div class="flex justify-between items-end mb-8 border-b border-outline-variant pb-4">
+                <div>
+                    <span
+                        class="font-label-caps text-label-caps text-tertiary tracking-wider uppercase mb-2 block">Editor's
+                        Picks</span>
+                    <h2 class="font-headline-xl text-headline-xl text-on-background">Featured this month</h2>
+                </div>
+                <a class="font-label-caps text-label-caps text-tertiary hover:text-primary transition-colors flex items-center gap-1"
+                    href="#">View all <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-gutter">
+                <!-- Book Card 1 -->
+                <div class="group flex flex-col">
+                    <div
+                        class="relative bg-surface border border-outline-variant rounded-lg p-3 mb-4 aspect-[2/3] flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div aria-hidden="true" class="absolute inset-0 bg-[#4A725D] m-3 rounded shadow-inner"></div>
+                        <span
+                            class="relative z-10 bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-1 rounded-sm self-start">BESTSELLER</span>
+                        <div class="relative z-10 self-start text-on-primary mt-auto">
+                            <p class="font-title-md text-sm leading-tight mb-1">The Lighthouse Keeper</p>
+                            <p class="text-xs opacity-80">Mara Ellison</p>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="font-title-md text-title-md text-on-background line-clamp-1 group-hover:text-primary transition-colors">
+                            The Lighthouse Keeper</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant mb-2">Mara Ellison</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-title-md text-tertiary-container">$18.00</span>
+                            <span class="text-xs text-outline line-through">$24.00</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-secondary-container">
+                            <span class="material-symbols-outlined text-[14px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-on-surface-variant">4.6</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book Card 2 -->
+                <div class="group flex flex-col">
+                    <div
+                        class="relative bg-surface border border-outline-variant rounded-lg p-3 mb-4 aspect-[2/3] flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div aria-hidden="true" class="absolute inset-0 bg-[#586A8D] m-3 rounded shadow-inner"></div>
+                        <div class="relative z-10 self-start text-on-primary mt-auto">
+                            <p class="font-title-md text-sm leading-tight mb-1">Ashes in the Archive</p>
+                            <p class="text-xs opacity-80">J. P. Crowe</p>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="font-title-md text-title-md text-on-background line-clamp-1 group-hover:text-primary transition-colors">
+                            Ashes in the Archive</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant mb-2">J. P. Crowe</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-title-md text-tertiary-container">$15.50</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-secondary-container">
+                            <span class="material-symbols-outlined text-[14px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-on-surface-variant">4.4</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book Card 3 -->
+                <div class="group flex flex-col">
+                    <div
+                        class="relative bg-surface border border-outline-variant rounded-lg p-3 mb-4 aspect-[2/3] flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div aria-hidden="true" class="absolute inset-0 bg-[#8E4A68] m-3 rounded shadow-inner"></div>
+                        <span
+                            class="relative z-10 bg-surface text-on-surface font-label-caps text-[10px] px-2 py-1 rounded-sm self-end">NEW</span>
+                        <div class="relative z-10 self-start text-on-primary mt-auto">
+                            <p class="font-title-md text-sm leading-tight mb-1">Salt &amp; Other Small Gods</p>
+                            <p class="text-xs opacity-80">Imani Okafor</p>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="font-title-md text-title-md text-on-background line-clamp-1 group-hover:text-primary transition-colors">
+                            Salt &amp; Other Small Gods</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant mb-2">Imani Okafor</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-2">
+                        <div class="flex items-center gap-2">
+                            <span class="font-title-md text-tertiary-container">$13.00</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-secondary-container">
+                            <span class="material-symbols-outlined text-[14px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-on-surface-variant">4.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-on-background dark:bg-on-background text-surface-bright dark:text-surface-bright font-body-md text-body-md w-full py-section-gap no borders flat no shadows">
+        <div
+            class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto opacity-80 hover:opacity-100 transition-opacity">
+            <!-- Branding -->
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-2 font-headline-xl text-headline-xl font-bold text-surface-bright">
+                    <div
+                        class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-title-md text-sm">
+                        P</div>
+                    Pages &amp; Co.
+                </div>
+                <p class="text-surface-variant text-sm max-w-[200px]">An independent bookshop for readers who like to
+                    take their time. Open since 1998.</p>
+                <div class="flex gap-4">
+                    <a class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-variant hover:text-on-background transition-colors text-xs"
+                        href="#">In</a>
+                    <a class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-variant hover:text-on-background transition-colors text-xs"
+                        href="#">X</a>
+                    <a class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-variant hover:text-on-background transition-colors text-xs"
+                        href="#">f</a>
+                </div>
+            </div>
+            <!-- Links -->
+            <div>
+                <h4 class="font-label-caps text-label-caps text-secondary-container mb-4">Shop</h4>
+                <ul class="flex flex-col gap-3 text-sm">
+                    <li class=""><a class="text-surface-variant hover:text-secondary-fixed transition-colors"
+                            href="#">New arrivals</a></li>
+                    <li class=""><a class="text-surface-variant hover:text-secondary-fixed transition-colors"
+                            href="#">Bestsellers</a></li>
+                    <li class=""><a class="text-surface-variant hover:text-secondary-fixed transition-colors"
+                            href="#">Fiction</a></li>
+                </ul>
+            </div>
+            <!-- More Links -->
+            <div>
+                <h4 class="font-label-caps text-label-caps text-secondary-container mb-4">About</h4>
+                <ul class="flex flex-col gap-3 text-sm">
+                    <li class=""><a class="text-surface-variant hover:text-secondary-fixed transition-colors"
+                            href="#">Our story</a></li>
+                    <li class=""><a class="text-surface-variant hover:text-secondary-fixed transition-colors"
+                            href="#">Events</a></li>
+                    <li class=""><a class="text-surface-variant hover:text-secondary-fixed transition-colors"
+                            href="#">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Newsletter -->
+            <div>
+                <h4 class="font-label-caps text-label-caps text-secondary-container mb-4">The Reading Room</h4>
+                <p class="text-surface-variant text-sm mb-4">One handpicked recommendation in your inbox each week.</p>
+                <form class="flex gap-2">
+                    <input
+                        class="bg-transparent border border-outline-variant rounded px-3 py-2 text-sm w-full focus:outline-none focus:border-secondary-container"
+                        placeholder="Email address" type="email">
+                    <button
+                        class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded font-title-md text-sm hover:bg-secondary-fixed transition-colors"
+                        type="submit">Join</button>
+                </form>
+            </div>
+        </div>
+        <div
+            class="mt-16 pt-8 border-t border-outline-variant/20 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-surface-variant">
+            <p class="">© 2024 Pages &amp; Co. · Privacy · Terms</p>
+            <p class="mt-4 md:mt-0">Free shipping on orders over $35</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
