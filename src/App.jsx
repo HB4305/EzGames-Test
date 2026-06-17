@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Bag from './pages/Bag';
 import BookList from './pages/BookList';
 import BookDetail from './pages/BookDetail';
+import Collection from './pages/Collection';
+import ScrollToTop from './components/ScrollToTop';
 import { CartProvider } from './contexts/CartContext';
 import styles from './App.module.css';
 
@@ -13,6 +15,7 @@ function App() {
   return (
     <CartProvider>
       <BrowserRouter>
+        <ScrollToTop />
       <div className={`font-body-md text-on-background antialiased bg-surface min-h-screen flex flex-col ${styles.appBackground}`}>
         <Navbar />
         <div className="flex-grow">
@@ -20,6 +23,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/books" element={<BookList />} />
             <Route path="/book/:id" element={<BookDetail />} />
+            <Route path="/collection/:id" element={<Collection />} />
             <Route path="/bag" element={<Bag />} />
           </Routes>
         </div>
