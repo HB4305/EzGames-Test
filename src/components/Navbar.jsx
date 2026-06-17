@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
@@ -7,16 +8,16 @@ const Navbar = () => {
             className={`bg-surface dark:bg-surface text-primary dark:text-primary-fixed font-title-md text-title-md fixed top-0 w-full z-50 border-b border-outline-variant flat no shadows ${styles.navbar}`}>
             <div className="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto px-2 md:px-8">
                 {/* Brand */}
-                <a className="flex items-center gap-2 font-headline-xl text-headline-xl font-bold text-primary dark:text-primary-fixed scale-95 active:scale-90 transition-transform duration-200 whitespace-nowrap"
-                    href="#">
+                <Link className="flex items-center gap-2 font-headline-xl text-headline-xl font-bold text-primary dark:text-primary-fixed scale-95 active:scale-90 transition-transform duration-200 whitespace-nowrap"
+                    to="/">
                     <div
                         className="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary font-title-md text-sm">
                         P</div>
                     Pages &amp; Co.
-                </a>
+                </Link>
                 {/* Nav Links (Desktop) */}
                 <div className="hidden md:flex items-center gap-6 flex-nowrap">
-                    <a className="text-primary font-bold border-b-2 border-primary pb-1 whitespace-nowrap" href="#">Home</a>
+                    <Link className="text-primary font-bold border-b-2 border-primary pb-1 whitespace-nowrap" to="/">Home</Link>
                     <a className="text-on-surface-variant hover:text-primary px-2 transition-colors whitespace-nowrap"
                         href="#">Shop All</a>
                     <a className="text-on-surface-variant hover:text-primary px-2 transition-colors whitespace-nowrap"
@@ -40,12 +41,12 @@ const Navbar = () => {
                     <button
                         className="hidden md:block px-4 py-1.5 rounded-full border border-outline-variant text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-all text-sm font-title-md">Sign
                         in</button>
-                    <button
+                    <Link to="/bag"
                         className="flex items-center gap-2 bg-on-background text-on-primary px-4 py-1.5 rounded-full hover:bg-primary transition-colors text-sm font-title-md">
                         Bag
                         <span
-                            className="bg-secondary-container text-on-secondary-container text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
-                    </button>
+                            className="bg-secondary-container text-on-secondary-container text-xs w-5 h-5 rounded-full flex items-center justify-center">2</span>
+                    </Link>
                 </div>
             </div>
         </nav>
