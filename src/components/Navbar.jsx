@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import LoginModal from './LoginModal';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
+
     return (
         <nav
             className={`bg-surface dark:bg-surface text-primary dark:text-primary-fixed font-title-md text-title-md fixed top-0 w-full z-50 border-b border-outline-variant flat no shadows ${styles.navbar}`}>
@@ -39,6 +42,7 @@ const Navbar = () => {
                             placeholder="Search titles, authors..." type="text" />
                     </div>
                     <button
+                        onClick={() => setIsLoginOpen(true)}
                         className="hidden md:block px-4 py-1.5 rounded-full border border-outline-variant text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-all text-sm font-title-md">Sign
                         in</button>
                     <Link to="/bag"
@@ -49,6 +53,7 @@ const Navbar = () => {
                     </Link>
                 </div>
             </div>
+            <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
         </nav>
     );
 };
