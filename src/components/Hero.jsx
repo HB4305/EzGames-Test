@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Hero.module.css';
 
 const Hero = () => {
@@ -16,9 +17,10 @@ const Hero = () => {
                         back to</h1>
                     <p className="font-body-lg text-body-lg text-surface-container-high mb-8 max-w-md">Our booksellers pick
                         the titles they can't stop pressing into customers' hands.</p>
-                    <button
-                        className="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-md font-title-md hover:bg-secondary transition-colors">Browse
-                        bestsellers</button>
+                    <Link
+                        to="/collection/bestseller"
+                        className="inline-block bg-secondary-container text-on-secondary-container px-6 py-3 rounded-md font-title-md hover:bg-secondary transition-colors">Browse
+                        bestsellers</Link>
                 </div>
                 {/* Carousel Controls */}
                 <button
