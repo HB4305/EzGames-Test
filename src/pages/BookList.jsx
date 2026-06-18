@@ -13,6 +13,7 @@ const BookList = () => {
     const queryParams = new URLSearchParams(location.search);
     const categoryFromQuery = queryParams.get('category') || 'All';
     const collectionFromQuery = queryParams.get('collection');
+    const searchFromQuery = queryParams.get('search');
 
     const [selectedCategory, setSelectedCategory] = useState(categoryFromQuery);
     const [sortOption, setSortOption] = useState('Featured');
@@ -42,7 +43,15 @@ const BookList = () => {
             filtered = filtered.slice(0, 5);
         }
 
-        if (selectedCategory !== 'All') {
+        if (searchFromQuery) {
+            const lowerSearch = searchFromQuery.toLowerCase();
+            filtered = filtered.filter(book => 
+                book.title.toLowerCase().includes(lowerSearch) || 
+                book.author.toLowerCase().includes(lowerSearch)
+            );
+        }
+
+        if (selectedCategory !== 'All' && !searchFromQuery) {
             filtered = filtered.filter(book => book.category === selectedCategory);
         }
 
@@ -55,7 +64,7 @@ const BookList = () => {
         }
         
         return filtered;
-    }, [selectedCategory, sortOption, collectionFromQuery]);
+    }, [selectedCategory, sortOption, collectionFromQuery, searchFromQuery]);
 
     return (
         <main className={`max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap pt-[120px] ${styles.bookList || ''}`}>
@@ -63,25 +72,33 @@ const BookList = () => {
             <nav className="mb-stack-lg text-sm text-on-surface-variant font-body-md flex items-center gap-2">
                 <Link className="hover:text-primary transition-colors" to="/">Home</Link>
                 <span>/</span>
-                <span className="text-on-surface">Books</span>
+                <span className="text-on-surface">{searchFromQuery ? 'Search Results' : 'Books'}</span>
             </nav>
+
+            {searchFromQuery && (
+                <div className="mb-8">
+                    <h1 className="font-headline-xl text-headline-xl text-on-background">Search results for "{searchFromQuery}"</h1>
+                </div>
+            )}
 
             {/* Filters and Sort */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-md mb-section-gap">
-                {/* Filter Categories */}
-                <div className="flex flex-wrap gap-2">
-                    {categories.map(cat => (
-                        <button
-                            key={cat}
-                            onClick={() => handleCategoryChange(cat)}
-                            className={selectedCategory === cat
-                                ? "bg-tertiary text-on-tertiary border border-tertiary px-4 py-1.5 rounded-full font-body-md text-sm transition-colors"
-                                : "bg-surface border border-outline-variant text-on-surface-variant hover:border-outline hover:text-on-surface px-4 py-1.5 rounded-full font-body-md text-sm transition-colors"}
-                        >
-                            {cat}
-                        </button>
-                    ))}
-                </div>
+                {/* Filter Categories (hide if searching) */}
+                {!searchFromQuery && (
+                    <div className="flex flex-wrap gap-2">
+                        {categories.map(cat => (
+                            <button
+                                key={cat}
+                                onClick={() => handleCategoryChange(cat)}
+                                className={selectedCategory === cat
+                                    ? "bg-tertiary text-on-tertiary border border-tertiary px-4 py-1.5 rounded-full font-body-md text-sm transition-colors"
+                                    : "bg-surface border border-outline-variant text-on-surface-variant hover:border-outline hover:text-on-surface px-4 py-1.5 rounded-full font-body-md text-sm transition-colors"}
+                            >
+                                {cat}
+                            </button>
+                        ))}
+                    </div>
+                )}
                 
                 {/* Sort Dropdown */}
                 <div className="flex items-center gap-2 font-body-md text-sm text-on-surface-variant">
@@ -117,7 +134,9 @@ const BookList = () => {
                     />
                 ))}
                 {displayedBooks.length === 0 && (
-                    <p className="col-span-full text-center text-on-surface-variant py-8">No books found in this category.</p>
+                    <p className="col-span-full text-center text-on-surface-variant py-8">
+                        {searchFromQuery ? `No books found for "${searchFromQuery}".` : 'No books found in this category.'}
+                    </p>
                 )}
             </div>
         </main>
