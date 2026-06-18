@@ -1,6 +1,8 @@
-# Running the Project
+# EzGames Books Store
 
-Follow these instructions to run the application on your local machine.
+A web application built with **React**, **Vite**.
+
+---
 
 ### Prerequisites
 
